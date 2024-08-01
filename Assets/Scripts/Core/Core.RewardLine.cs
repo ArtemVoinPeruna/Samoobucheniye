@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class RewardLine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int _coin = 0;
+
+    public int Coins
     {
-        
+        get { return _coin; }
+        private set { _coin = value; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddCoins()
     {
-        
+        Coins++;
+    }
+
+    public void CollectionsCoin()
+    {
+        Coins = 0;
+    }
+
+    public void KnopkaSbora()
+    {
+        CollectionsCoin();
     }
 }
