@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.Rewards
@@ -12,6 +10,11 @@ namespace Core.Rewards
         {
             get { return _coin; }
             private set { _coin = value; }
+        }
+
+        public void Start()
+        {
+            InvokeRepeating(nameof(AddCoins), 1f, 1f);
         }
 
         public void AddCoins()
