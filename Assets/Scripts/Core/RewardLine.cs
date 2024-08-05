@@ -5,6 +5,8 @@ namespace Core.Rewards
     public class RewardLine : MonoBehaviour
     {
         private int _coin = 0;
+        private float _accumulationRate = 1f; // Скорость накопления монет
+        [SerializeField] private RewardView _rewardView;
 
         public int Coins
         {
@@ -12,25 +14,32 @@ namespace Core.Rewards
             private set { _coin = value; }
         }
 
-        public void Start()
+        private void Start()
         {
             InvokeRepeating(nameof(AddCoins), 1f, 1f);
         }
 
-        public void AddCoins()
+        private void AddCoins()
         {
-            Coins++;
+            Coins += Mathf.RoundToInt(_accumulationRate);
+            _rewardView.UpdateProgressBar(Coins);
+            Debug.Log($"Накоплено монет: {Coins}");
         }
 
-        public void CollectionsCoin()
+        public void CollectCoins()
         {
+            MoneyBox.Instance.AddCurrency(Coins);
             Coins = 0;
+            _rewardView.UpdateProgressBar(Coins);
         }
 
-        public void KnopkaSbora()
+        public void Upgrade()
         {
-            CollectionsCoin();
+            if (MoneyBox.Instance.SpendCurrency(200)) // Стоимость апгрейда шкалы
+            {
+                _accumulationRate *= 2; // Увеличиваем скорость накопления монет
+                Debug.Log($"Шкала апгрейдена. Новая скорость накопления: {_accumulationRate}");
+            }
         }
     }
-
 }
