@@ -7,37 +7,21 @@ public class MoneyBox : ScriptableObject
 
     public int CurrencyAmount
     {
-        get { return _currencyAmount; }
-        private set { _currencyAmount = value; }
-    }
-
-    public static MoneyBox Instance
-    {
-        get
+        get 
         {
-            if (_instance == null)
-            {
-                _instance = Resources.Load<MoneyBox>("MoneyBox");
-            }
-            return _instance;
+            return _currencyAmount; 
+        }
+        set 
+        {
+            _currencyAmount += value; 
         }
     }
+
     private static MoneyBox _instance;
 
     public void AddCurrency(int amount)
     {
         CurrencyAmount += amount;
         MoneyBoxSave.Instance.SaveCurrency(CurrencyAmount);
-    }
-
-    public bool SpendCurrency(int amount)
-    {
-        if (CurrencyAmount >= amount)
-        {
-            CurrencyAmount -= amount;
-            MoneyBoxSave.Instance.SaveCurrency(CurrencyAmount);
-            return true;
-        }
-        return false;
     }
 }

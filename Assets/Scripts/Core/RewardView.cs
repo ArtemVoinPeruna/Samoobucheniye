@@ -11,25 +11,11 @@ namespace Core.Rewards
         public delegate void BarChangedDelegate(ProgressBar bar);
         public event BarChangedDelegate BarChanged;
 
-        public ProgressBar ProgressBar
-        {
-            get { return _progressBar; }
-            private set { _progressBar = value; }
-        }
-
         public RewardView Init(ProgressBar bar)
         {
-            ProgressBar = bar;
+            _progressBar = bar;
             BarChanged?.Invoke(bar);
             return this;
-        }
-
-        public void UpdateProgressBar(float value)
-        {
-            if (ProgressBar != null)
-            {
-                ProgressBar.SetProgress(value);
-            }
         }
     }
 }
