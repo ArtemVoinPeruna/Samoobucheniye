@@ -22,6 +22,6 @@ public class MoneyBox : ScriptableObject
     public void AddCurrency(int amount)
     {
         CurrencyAmount += amount;
-        MoneyBoxSave.Instance.SaveCurrency(CurrencyAmount);
+        //MoneyBoxSave.Instance.SaveCurrency(CurrencyAmount);
     }
 }

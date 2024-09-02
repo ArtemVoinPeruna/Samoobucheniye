@@ -5,6 +5,7 @@ namespace Core.Rewards
 {
     public class RewardLineProd : MonoBehaviour
     {
+        private RewardLineView _logic_PREFAB;
         [SerializeField] private List<RewardLine> _rewards;
         [SerializeField] private RewardLine _rewardPrefab;
 
@@ -22,7 +23,7 @@ namespace Core.Rewards
         public void CreateNewReward()
         {
             RewardLine newReward = Instantiate(_rewardPrefab, transform);
-            AddReward(newReward);
+            //AddReward(newReward);
         }
     }
 }
