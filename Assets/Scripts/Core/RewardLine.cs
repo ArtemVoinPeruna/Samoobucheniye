@@ -16,7 +16,11 @@ namespace Core.Rewards
             }
             set 
             { 
-                _coin = value; 
+                if(_coin != 0)
+                {
+                    _coin = value; 
+                }
+                
             }
         }
 
@@ -32,16 +36,11 @@ namespace Core.Rewards
 
         public void CollectCoins()
         {
-       //     MoneyBox.Instance.AddCurrency(Coins);
             Coins = 0;
         }
 
         public void Upgrade()
         {
-    //        if (MoneyBox.Instance.SpendCurrency(200))
-            {
-                _accumulationRate *= 2;
-            }
         }
     }
 }

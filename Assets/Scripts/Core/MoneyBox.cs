@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MoneyBox", menuName = "ScriptableObjects/MoneyBox", order = 1)]
+[CreateAssetMenu(fileName = "MoneyBox", menuName = "ScriptableObjects/MoneyBox", order = 50)]
 public class MoneyBox : ScriptableObject
 {
     private int _currencyAmount;
@@ -22,6 +22,5 @@ public class MoneyBox : ScriptableObject
     public void AddCurrency(int amount)
     {
         CurrencyAmount += amount;
-        //MoneyBoxSave.Instance.SaveCurrency(CurrencyAmount);
     }
 }

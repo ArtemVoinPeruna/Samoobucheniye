@@ -1,9 +1,8 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MoneyBoxSave", menuName = "ScriptableObjects/MoneyBoxSave", order = 2)]
+[CreateAssetMenu(fileName = "MoneyBoxSave", menuName = "ScriptableObjects/MoneyBoxSave", order = 50)]
 public class MoneyBoxSave : ScriptableObject
 {
-    private static MoneyBoxSave _instance;
 
     public void SaveCurrency(int amount)
     {

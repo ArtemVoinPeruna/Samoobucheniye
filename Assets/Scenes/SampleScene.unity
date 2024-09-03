@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 144228376}
   - component: {fileID: 144228375}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce2d4e6b0444db46b141ceaf5f46e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _logic_PREFAB: {fileID: 0}
   _rewards:
   - {fileID: 0}
   _rewardPrefab: {fileID: 0}
@@ -1065,7 +1066,7 @@ GameObject:
   - component: {fileID: 1329664486}
   - component: {fileID: 1329664485}
   m_Layer: 5
-  m_Name: Sobrat
+  m_Name: Collect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
