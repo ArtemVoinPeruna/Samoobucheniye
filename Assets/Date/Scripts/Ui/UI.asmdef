@@ -1,3 +1,16 @@
 {
-	"name": "UI"
+    "name": "UI.RewardUI",
+    "rootNamespace": "UI.RewardUIs",
+    "references": [
+        "GUID:04f8a2a806d176343a88558d019b15f9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
