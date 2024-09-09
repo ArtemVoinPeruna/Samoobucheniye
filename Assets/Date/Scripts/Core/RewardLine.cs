@@ -4,25 +4,18 @@ namespace Core.Rewards
 {
     public class RewardLine : MonoBehaviour
     {
-        private int _coin = 0;
-        private float _accumulationRate = 1f;
-        [SerializeField] private RewardView _rewardView;
+        [field: SerializeField] private RewardView _rewardView;
+        [field: SerializeField] private MoneyBox _moneyBox;
+        [field: SerializeField] private int CapacityBaseLimit;
+        [field: SerializeField] private int InitalCostBuy;
 
-        public int Coins
-        {
-            get 
-            {
-                return _coin; 
-            }
-            set 
-            { 
-                if(_coin != 0)
-                {
-                    _coin = value; 
-                }
-                
-            }
-        }
+        private float _limitMultiply = 1.1f;
+
+        public int Capacity => Mathf.RoundToInt(CapacityBaseLimit * Mathf.Pow(_limitMultiply, Lvl - 1));
+        public int CostBuy => Mathf.RoundToInt(InitalCostBuy * Mathf.Pow(_limitMultiply, Lvl - 1));
+        public int Lvl { get; private set; }
+        public int Fill { get; private set; }
+
 
         private void Start()
         {
@@ -31,16 +24,23 @@ namespace Core.Rewards
 
         private void AddCoins()
         {
-            Coins += Mathf.RoundToInt(_accumulationRate);
+           if (Fill < Capacity)
+            {
+                Mathf.RoundToInt(Fill);
+            }
         }
 
         public void CollectCoins()
         {
-            Coins = 0;
+            _moneyBox.CurrencyAmount += Fill;
+
+            Fill = 0;
         }
 
         public void Upgrade()
         {
+            Lvl++; 
         }
+
     }
 }

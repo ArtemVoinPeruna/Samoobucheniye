@@ -13,7 +13,10 @@ public class MoneyBox : ScriptableObject
         }
         set 
         {
-            _currencyAmount += value; 
+            if (value < 0) 
+            {
+                _currencyAmount += value;
+            }
         }
     }
 
