@@ -11,7 +11,12 @@ namespace UI.RewardUIs
 
         private void ButtonClick()
         {
-            _rewardView.ProgressBar.MoneyBox += CurrencyChanged;
+            _rewardView.ProgressBar.MoneyBox.CurrencyChanged += OnCurrencyChanged;
+        }
+
+        private void OnCurrencyChanged()
+        {
+
         }
     }
 }
