@@ -7,6 +7,14 @@ namespace UI.RewardUIs
     public class CollectUI : MonoBehaviour
     {
         [SerializeField] private RewardView _rewardView;
-       // [SerializeField] Button b
+
+
+
+        private void ButtonClick()
+        {
+            _rewardView.ProgressBar.CollectCoins();
+        }
+
     }
 }
+

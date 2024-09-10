@@ -8,6 +8,8 @@ namespace Core.Rewards
         [SerializeField] private List<RewardLine> _rewards;
         [SerializeField] private RewardLine _rewardPrefab;
 
+        private int _priceBar;
+
 
         public RewardLineView _logic_PREFAB;
         public delegate void RewardChangedDelegate(RewardLine reward);
@@ -21,10 +23,12 @@ namespace Core.Rewards
             }
         }
 
-        
+
         public void CreateNewReward()
         {
             RewardLine newReward = Instantiate(_rewardPrefab, transform);
+
+            _priceBar += 1000;
         }
     }
 }
