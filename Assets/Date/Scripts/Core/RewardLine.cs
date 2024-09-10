@@ -5,7 +5,7 @@ namespace Core.Rewards
     public class RewardLine : MonoBehaviour
     {
         [field: SerializeField] private RewardView _rewardView;
-        [field: SerializeField] private MoneyBox _moneyBox;
+        [field: SerializeField] public MoneyBox MoneyBox;
         [field: SerializeField] private int CapacityBaseLimit;
         [field: SerializeField] private int InitalCostBuy;
 
@@ -32,7 +32,7 @@ namespace Core.Rewards
 
         public void CollectCoins()
         {
-            _moneyBox.CurrencyAmount += Fill;
+            MoneyBox.CurrencyAmount += Fill;
 
             Fill = 0;
         }

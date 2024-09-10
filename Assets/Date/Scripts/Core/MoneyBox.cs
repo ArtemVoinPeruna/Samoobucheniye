@@ -5,19 +5,23 @@ public class MoneyBox : ScriptableObject
 {
     private int _currencyAmount;
 
+    public delegate void CurrencyAmountChanged();
+    public event CurrencyAmountChanged CurrencyChanged;
+
     public int CurrencyAmount
     {
         get 
         {
             return _currencyAmount; 
         }
-        set 
+        set
         {
             _currencyAmount += value;
-            if (_currencyAmount < 0) 
+            if (_currencyAmount < 0)
             {
                 _currencyAmount = 0;
-            }
+            } 
+            
         }
     }
 
