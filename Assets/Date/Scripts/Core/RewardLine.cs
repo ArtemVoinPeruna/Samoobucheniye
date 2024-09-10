@@ -15,6 +15,8 @@ namespace Core.Rewards
         public int CostBuy => Mathf.RoundToInt(InitalCostBuy * Mathf.Pow(_limitMultiply, Lvl - 1));
         public int Lvl { get; private set; }
         public int Fill { get; private set; }
+        public delegate void InterfaceBarDelegate();
+        public event InterfaceBarDelegate InterfaceBar;
 
 
         private void Start()
@@ -26,7 +28,8 @@ namespace Core.Rewards
         {
            if (Fill < Capacity)
             {
-                Mathf.RoundToInt(Fill);
+                Fill++;
+                InterfaceBar?.Invoke();
             }
         }
 
