@@ -1,6 +1,7 @@
 using Core.Rewards;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace UI.RewardUIs
@@ -16,7 +17,7 @@ namespace UI.RewardUIs
 
         private void OnCurrencyChanged()
         {
-
+            TextMeshProUGUI 
         }
     }
 }
