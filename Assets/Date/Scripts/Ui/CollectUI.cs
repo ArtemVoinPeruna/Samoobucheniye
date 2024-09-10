@@ -1,5 +1,6 @@
 using UnityEngine;
 using Core.Rewards;
+using UnityEngine.UI;
 
 namespace UI.RewardUIs
 {
@@ -7,10 +8,13 @@ namespace UI.RewardUIs
     {
         [SerializeField] private RewardView _rewardView;
 
+
+
         private void ButtonClick()
         {
             _rewardView.ProgressBar.CollectCoins();
         }
+
     }
 }
 

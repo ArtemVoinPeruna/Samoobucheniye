@@ -2,7 +2,8 @@
     "name": "UI.RewardUI",
     "rootNamespace": "UI.RewardUIs",
     "references": [
-        "GUID:04f8a2a806d176343a88558d019b15f9"
+        "GUID:04f8a2a806d176343a88558d019b15f9",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
