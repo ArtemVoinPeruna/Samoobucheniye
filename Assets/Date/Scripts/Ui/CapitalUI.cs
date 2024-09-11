@@ -1,23 +1,31 @@
 using Core.Rewards;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 namespace UI.RewardUIs
 {
-    public class NewBehaviourScript : MonoBehaviour
+    public class CapitalUI : MonoBehaviour
     {
+        [SerializeField] private TMP_Text _currencyText;
         [SerializeField] private RewardView _rewardView;
 
-        private void ButtonClick()
+        private void OnEnable()
         {
-            _rewardView.ProgressBar.MoneyBox.CurrencyChanged += OnCurrencyChanged;
+            _rewardView.RewardLine.MoneyBox.CurrencyChanged += OnCurrencyChanged;
         }
+
+        private void OnDisable()
+        {
+            _rewardView.RewardLine.MoneyBox.CurrencyChanged -= OnCurrencyChanged;
+        }
+
 
         private void OnCurrencyChanged()
         {
-            TextMeshProUGUI 
+            if (_currencyText != null)
+            {
+                _currencyText.text = _rewardView.RewardLine.MoneyBox.CurrencyAmount.ToString();
+            }
         }
     }
 }

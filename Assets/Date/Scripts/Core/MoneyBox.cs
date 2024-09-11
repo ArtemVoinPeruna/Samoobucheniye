@@ -25,10 +25,4 @@ public class MoneyBox : ScriptableObject
         }
     }
 
-    private static MoneyBox _instance;
-
-    public void AddCurrency(int amount)
-    {
-        CurrencyAmount += amount;
     }
-}

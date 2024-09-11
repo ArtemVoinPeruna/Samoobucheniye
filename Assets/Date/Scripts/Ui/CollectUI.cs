@@ -1,6 +1,5 @@
 using UnityEngine;
 using Core.Rewards;
-using UnityEngine.UI;
 
 namespace UI.RewardUIs
 {
@@ -12,7 +11,7 @@ namespace UI.RewardUIs
 
         private void ButtonClick()
         {
-            _rewardView.ProgressBar.CollectCoins();
+            _rewardView.RewardLine.CollectCoins();
         }
 
     }

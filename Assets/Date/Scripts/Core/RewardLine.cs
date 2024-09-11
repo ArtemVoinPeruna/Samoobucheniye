@@ -15,6 +15,7 @@ namespace Core.Rewards
         public int CostBuy => Mathf.RoundToInt(InitalCostBuy * Mathf.Pow(_limitMultiply, Lvl - 1));
         public int Lvl { get; private set; }
         public int Fill { get; private set; }
+
         public delegate void InterfaceBarDelegate();
         public event InterfaceBarDelegate InterfaceBar;
 
@@ -42,7 +43,9 @@ namespace Core.Rewards
 
         public void Upgrade()
         {
-            Lvl++; 
+            Lvl++;
+
+            InterfaceBar?.Invoke();
         }
 
     }
