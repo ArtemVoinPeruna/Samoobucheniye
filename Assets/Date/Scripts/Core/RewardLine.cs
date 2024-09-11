@@ -19,6 +19,9 @@ namespace Core.Rewards
         public delegate void InterfaceBarDelegate();
         public event InterfaceBarDelegate InterfaceBar;
 
+        public delegate void LvlChangedDelegate();
+        public event LvlChangedDelegate LvlChanged;
+
 
         private void Start()
         {

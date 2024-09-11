@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Core.Rewards;
 using TMPro;
+using UnityEngine.UI;
 
 namespace UI.RewardUIs
 {
@@ -11,6 +10,8 @@ namespace UI.RewardUIs
         [field: SerializeField] private TMP_Text _maxText;
         [field: SerializeField] private TMP_Text _currentText;
         [field: SerializeField] private RewardView _rewardView;
+        [field: SerializeField] private Image _fillView;
+
         private void OnEnable() 
         {
             _rewardView.BarChanged += OnBarChange;
@@ -29,8 +30,9 @@ namespace UI.RewardUIs
 
         public void InterfBarView()
         {
-            _maxText.text = _rewardView.RewardLine.;
-            _currentText.text = _rewardView.
+            _maxText.text = _rewardView.RewardLine.Capacity.ToString();
+            _currentText.text = _rewardView.RewardLine.Fill.ToString();
+            _fillView.fillAmount += _rewardView.RewardLine.Fill / _rewardView.RewardLine.Capacity;
         }
     }
 }

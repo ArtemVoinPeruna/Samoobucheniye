@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core.Rewards;
 using UnityEngine;
 
 namespace UI.RewardUIs
 {
     public class UpgradeUI : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField] private RewardView _rewardView;
 
-        // Update is called once per frame
-        void Update()
+
+
+        private void ButtonClick()
         {
-        
+            _rewardView.RewardLine.Upgrade();
         }
     }
 }
