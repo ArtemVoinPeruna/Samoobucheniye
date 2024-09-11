@@ -21,7 +21,7 @@ namespace UI.RewardUIs
             }
         public void OnBarChange(RewardLine bar)
         {
-        
+          
         }    
     }
 }

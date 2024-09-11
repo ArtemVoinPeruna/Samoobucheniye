@@ -17,7 +17,7 @@ namespace UI.RewardUIs
 
         private void OnCurrencyChanged()
         {
-            TextMeshProUGUI 
+            // TextMeshProUGUI;
         }
     }
 }
