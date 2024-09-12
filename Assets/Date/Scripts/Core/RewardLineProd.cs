@@ -5,10 +5,10 @@ namespace Core.Rewards
 {
     public class RewardLineProd : MonoBehaviour
     {
-        [SerializeField] private List<RewardLine> _rewards;
-        [SerializeField] private RewardLine _rewardPrefab;
+        [field: SerializeField] private List<RewardLine> _rewards;
+        [field: SerializeField] private RewardLine _rewardPrefab;
 
-        private int _priceBar;
+        public int _priceBar;
 
 
         public RewardLineView _logic_PREFAB;

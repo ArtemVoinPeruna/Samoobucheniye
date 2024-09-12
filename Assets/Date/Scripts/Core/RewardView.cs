@@ -8,6 +8,8 @@ namespace Core.Rewards
         public delegate void BarChangedDelegate(RewardLine bar);
         public event BarChangedDelegate BarChanged;
 
+        [HideInInspector] public RewardLineProd RewardLineProd;
+
         public RewardView Init(RewardLine bar)
         {
             RewardLine = bar;

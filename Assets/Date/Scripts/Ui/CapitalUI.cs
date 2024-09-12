@@ -6,8 +6,8 @@ namespace UI.RewardUIs
 {
     public class CapitalUI : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _currencyText;
-        [SerializeField] private RewardView _rewardView;
+        [field: SerializeField] private TMP_Text _currencyText;
+        [field: SerializeField] private RewardView _rewardView;
 
         private void OnEnable()
         {

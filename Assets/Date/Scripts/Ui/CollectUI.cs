@@ -5,7 +5,7 @@ namespace UI.RewardUIs
 {
     public class CollectUI : MonoBehaviour
     {
-        [SerializeField] private RewardView _rewardView;
+        [field: SerializeField] private RewardView _rewardView;
 
 
 
