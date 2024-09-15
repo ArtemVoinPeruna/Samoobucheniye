@@ -10,19 +10,20 @@ public class MoneyBox : ScriptableObject
 
     public int CurrencyAmount
     {
-        get 
+        get
         {
-            return _currencyAmount; 
+            return _currencyAmount;
         }
         set
         {
-            _currencyAmount += value;
-            if (_currencyAmount < 0)
-            {
-                _currencyAmount = 0;
-            } 
-            
+            _currencyAmount = Mathf.Max(0, value);
+
+            CurrencyChanged?.Invoke();
         }
     }
 
+    public void AddCurrency(int amount)
+    {
+        CurrencyAmount = _currencyAmount + amount;
     }
+}

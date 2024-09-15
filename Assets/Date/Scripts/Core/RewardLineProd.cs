@@ -5,30 +5,30 @@ namespace Core.Rewards
 {
     public class RewardLineProd : MonoBehaviour
     {
-        [field: SerializeField] private List<RewardLine> _rewards;
-        [field: SerializeField] private RewardLine _rewardPrefab;
+        [field: SerializeField] private Transform rewardViewParent; 
+        private List<RewardLine> rewards = new List<RewardLine>(); 
 
-        public int _priceBar;
+        public int PriceBar { get; private set; } 
+        [SerializeField] private RewardLine rewardLinePrefab; 
+
+        public delegate void RewardCreatedDelegate(RewardLine reward, Transform rewardViewParent);
+        public event RewardCreatedDelegate RewardCreated;
 
 
-        public RewardLineView _logic_PREFAB;
-        public delegate void RewardChangedDelegate(RewardLine reward);
-        public event RewardChangedDelegate RewardChanged;
-
-        private void Start()
-        {
-            foreach (var reward in _rewards)
-            {
-                
-            }
-        }
-
+        // private void Start()
+        // {
+        //     foreach (var reward in rewards)
+        //     {
+        //     }
+        // }
 
         public void CreateNewReward()
         {
-            RewardLine newReward = Instantiate(_rewardPrefab, transform);
+            RewardLine newReward = Instantiate(rewardLinePrefab, transform);
+            PriceBar += 1000;
 
-            _priceBar += 1000;
+            
+            RewardCreated?.Invoke(newReward, rewardViewParent);
         }
     }
 }

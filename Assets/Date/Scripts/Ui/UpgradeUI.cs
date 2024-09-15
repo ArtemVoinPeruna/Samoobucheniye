@@ -7,11 +7,16 @@ namespace UI.RewardUIs
     {
         [SerializeField] private RewardView _rewardView;
 
-
-
-        private void ButtonClick()
+        public void ButtonClick()
         {
-            _rewardView.RewardLine.Upgrade();
+            if (_rewardView != null && _rewardView.RewardLine != null)
+            {
+                _rewardView.RewardLine.Upgrade();
+            }
+            else
+            {
+                Debug.LogError("RewardView or RewardLine is not assigned!");
+            }
         }
     }
 }
